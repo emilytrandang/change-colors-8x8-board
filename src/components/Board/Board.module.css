@@ -1,0 +1,14 @@
+.board {
+  background-color: red;
+  width: fit-content;
+  height: fit-content;
+  display: grid;
+  grid-template: repeat(8, 1fr) / repeat(8, 1fr);
+}
+
+.pinkSquare {
+  background-color: pink;
+}
+.greenSquare {
+  background-color: teal;
+}
