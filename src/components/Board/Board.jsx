@@ -29,16 +29,28 @@ const Board = () => {
     setSquaresColors(newSquaresColors);
   };
 
+  const resetHandler = () => {
+    setSquaresColors(getInitialState());
+  };
   return (
-    <div className={classes.board}>
-      {squaresColors.map((color, i) => (
-        <Square
-          index={i}
-          key={i}
-          squareColor={color}
-          clickSquare={() => clickSquareHandler(i)}
-        />
-      ))}
+    <div className={classes.container}>
+      <button
+        className={classes.resetButton}
+        type="Button"
+        onClick={resetHandler}
+      >
+        Reset
+      </button>
+      <div className={classes.board}>
+        {squaresColors.map((color, i) => (
+          <Square
+            index={i}
+            key={i}
+            squareColor={color}
+            clickSquare={() => clickSquareHandler(i)}
+          />
+        ))}
+      </div>
     </div>
   );
 };
